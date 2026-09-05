@@ -50,15 +50,15 @@
         let vende_vinho = (select_vinho.value); // Verifica se o produtor também vende vinho
 
         if(vende_vinho == "sim"){
-            calculo_tonelada_uva_vinho(toneladas);
+            calculo_tonelada_uva_vinho();
         }
         else{
-            calculartoneladas(toneladas);
+            calculartoneladas();
         }
     }
 
-    function calculo_tonelada_uva_vinho(toneladas) { //ESSE CÁLCULO É VALIDO SOMENTE PARA PRODUTORES DO -> VINHO E DA UVA <-
-       
+    function calculo_tonelada_uva_vinho() { //ESSE CÁLCULO É VALIDO SOMENTE PARA PRODUTORES DO -> VINHO E DA UVA <-
+       let toneladas = Number(ipt_tonelada.value);
         let preco_garrafa = Number(ipt_garrafa.value);   // PREÇO VINHO DO PRODUTOR
         let garrafas_tonelada = 720; // A PRODUÇÃO DE GARRAFAS POR TONELADA É DE 720 
         let total_garrafa = toneladas * 720; // QUANTAS GARRAFAS PRODUZEM POR TONELADA
@@ -69,14 +69,14 @@
         let diferenca_com_sem_produto = faturamento_com_produto - faturamento_sem_produto; // DIFERENÇA DE LUCRO SEPARADA
        
         div_msg.innerHTML = `Como usuário produtor de uva e vendedor de vinho, nosso cálculo se baseia primeiro nas
-        suas ${toneladas} tonelada(s) produzidas, levando em conta que cada tonelada me traz ${garrafas_tonelada} garrafas, nos dando
-        a informação de ${total_garrafa} produzidas. De acordo com a queda de 20% levantada, sua perca foi de
+        suas ${toneladas} tonelada(s) produzidas, levando em conta que cada tonelada me traz ${garrafas_tonelada} garrafas, o que nos da
+        a informação de ${total_garrafa} garrafas produzidas. De acordo com a queda de 20% levantada, sua perca foi de
         ${percent_perda}, gerando um descréscimo total de ${producao_final}, evidenciando o principal:
         Sem nós, você fatura somente ${faturamento_sem_produto}, conosco, você fatura incríveis ${faturamento_com_produto}` // DIV criada para exibição dos cálculos do cliente produtos&vendedor
         
     }
-    function calculartoneladas(toneladas){ // Esse calculo é para APENAS o produtor da uva//
-        
+    function calculartoneladas(){ // Esse calculo é para APENAS o produtor da uva//
+        let toneladas = Number(ipt_tonelada.value);
         let faturamento= toneladas * 15000;//Calcular o faturamento medio de 1 tonelada em reais//
         let perda= faturamento * 0.2; // Perda de 20% dos produtores por conta dos fungos, ou seja, SEM nosso produto//
         let faturamentototal= faturamento + perda; // faturamento COM o nosso produto//
