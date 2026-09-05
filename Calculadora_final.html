@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora</title>
+    <title>Cálculadora</title>
 </head>
 
 <body>
@@ -14,8 +14,9 @@
         <div></div> <!--COMO CALCULAMOS-->
         <div> <!--DIV PARA COLOCAR INPUT, SELECT E BOTÃO-->
             <div></div> <!--INPUT OU SELECT-->
-            <div></div> <!--INPUT OU SELECT-->
-            <div></div> <!--BOTÃO-->
+            Quantas toneladas em média você produz por ano? <br><br><input id="ipt_tonelada"> <br> <!--INPUT OU SELECT-->
+            Qual o valor médio da garrafa do seu vinho? <br><br> <input id="ipt_garrafa"> <!--ESSE INPUT SÓ APARECE SE O CLIENTE FOR PRODUTOR DA UVA E VENDE VINHO-->
+            <button onclick="calculo_tonelada_uva_vinho()">Cálcular tonelada</button> <!--BOTÃO-->
         </div>
     </div>
 
@@ -36,3 +37,16 @@
 </body>
 
 </html>
+<script>
+    function calculo_tonelada_uva_vinho() { //ESSE CÁLCULO É VALIDO SOMENTE PARA PRODUTORES DO -> VINHO E DA UVA <-
+        let toneladas = Number(ipt_tonelada.value);    // NÚMERO EM TONELADAS DO PRODUTOR
+        let preco_garrafa = Number(ipt_garrafa.value);   // PREÇO VINHO DO PRODUTOR
+        let garrafas_tonelada = 720; // A PRODUÇÃO DE GARRAFAS POR TONELADA É DE 720 
+        let total_garrafa = toneladas * 720; // QUANTAS GARRAFAS PRODUZEM POR TONELADA
+        let percent_perda = total_garrafa * 0.20; // EM MÉDIA É PERDIDO 20% DE TUDO QUE PRODUZEM (SEM O PRODUTO)
+        let producao_final = total_garrafa - percent_perda; // CÁLCULO QUE EVIDÊNCIA AS PERDAS SOBRE O TODO DAS GARRAFAS
+        let lucro_sem_produto = percent_perda * preco_garrafa;  // FATURAMENTO SEM O PRODUTO
+        let lucro_com_produto = total_garrafa * preco_garrafa; // FATURAMENTO COM O PRODUTO
+        let diferenca_com_sem_produto = lucro_com_produto - lucro_sem_produto; // DIFERENÇA DE LUCRO SEPARADA
+    }
+</script>
