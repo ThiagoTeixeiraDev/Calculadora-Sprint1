@@ -14,6 +14,8 @@
         <div></div> <!--COMO CALCULAMOS-->
         <div> <!--DIV PARA COLOCAR INPUT, SELECT E BOTÃO-->
             <div></div> <!--INPUT OU SELECT-->
+            Inserir quantas toneladas produz por ano? <input id="inp_ton"> 
+            <button onclick="calculartoneladas()">Calcular faturamento</button><br>
             Quantas toneladas em média você produz por ano? <br><br><input id="ipt_tonelada"> <br> <!--INPUT OU SELECT-->
             Qual o valor médio da garrafa do seu vinho? <br><br> <input id="ipt_garrafa"> <!--ESSE INPUT SÓ APARECE SE O CLIENTE FOR PRODUTOR DA UVA E VENDE VINHO-->
             <button onclick="calculo_tonelada_uva_vinho()">Cálcular tonelada</button> <!--BOTÃO-->
@@ -48,5 +50,12 @@
         let lucro_sem_produto = percent_perda * preco_garrafa;  // FATURAMENTO SEM O PRODUTO
         let lucro_com_produto = total_garrafa * preco_garrafa; // FATURAMENTO COM O PRODUTO
         let diferenca_com_sem_produto = lucro_com_produto - lucro_sem_produto; // DIFERENÇA DE LUCRO SEPARADA
+    }
+    function calculartoneladas(){ // Esse calculo é para APENAS o produtor da uva//
+        let toneladas= Number(inp_ton.value) // Transformar o texto em número e puxar o valor do input com o value//
+        let faturamento= toneladas * 15000;//Calcular o faturamento medio de 1 tonelada em reais//
+        let perda= faturamento * 0.2; // Perda de 20% dos produtores por conta dos fungos, ou seja, SEM nosso produto//
+        let faturamentototal= faturamento + perda; // faturamento COM o nosso produto//
+        let diferenca= faturamentototal - faturamento; // A diferença que o produtor vai ter implementando nosso projeto em seu terreno //
     }
 </script>
