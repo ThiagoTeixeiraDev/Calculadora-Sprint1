@@ -1,0 +1,93 @@
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin-top: 50px;
+    padding: 40px 16px;
+    background: #d9cfd6;
+}
+
+.pagina {
+    display: flex;
+    gap: 24px;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.cartao-esquerda {
+    width: 50%;
+    padding: 40px;
+    background-color: white;
+    border-radius: 16px;
+}
+
+.cartao-esquerda h1 {
+    margin-bottom: 24px;
+    font-family: Georgia, serif;
+    font-size: 28px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    color: #6b1f27;
+}
+
+.texto-descricao {
+    margin-bottom: 24px;
+    color: #5c5c5c;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.campo {
+    margin-bottom: 16px;
+}
+
+.campo input {
+    width: 100%;
+    padding: 14px 16px;
+    border: none;
+    border-radius: 10px;
+    background-color: #f1efec;
+    font-size: 14px;
+}
+
+.cartao-direita {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 50%;
+}
+
+.card-destaque {
+    height: 180px;
+    background: #7a2430;
+    border-radius: 16px;
+}
+
+.grade-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.card-pequeno {
+    width: calc(50% - 8px);
+    min-height: 140px;
+    background-color: white;
+    border-radius: 16px;
+}
+
+@media (max-width: 720px) {
+    .pagina {
+        flex-direction: column;
+    }
+
+    .cartao-esquerda,
+    .cartao-direita {
+        width: 100%;
+    }
+}
