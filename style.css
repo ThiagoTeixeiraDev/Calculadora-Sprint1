@@ -88,33 +88,43 @@ select option{
     display: flex;
     flex-direction: column;
     gap: 16px;
-    width: 50%;
+    width: 60%;
 }
 
 .cartao-direita p{
     margin-top: 10px;
+    text-align: center;
 }
-
 .card-destaque {
     height: 180px;
     background: #7a2430;
     border-radius: 16px;
     color: beige;
-    padding-left: 20px;
-    padding-top: 10px;
 }
 
-.grade-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
+.card-destaque p{
+    margin-left: 90px;
+    margin-top: 20px;
+    width: 300px;
+    font-weight: bold;
 }
+
 .bloco1,.bloco2{
     display: flex;
 }
 
+.valor_card{
+    color: #6b1f27;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.valor_card_destaque{
+    font-size: 40px;
+}
+
 .card-pequeno1, .card-pequeno2,.card-pequeno3, .card-pequeno4{
-    width: calc(65% - 8px);
+    width: 70%;
     min-height: 140px;
     background-color: white;
     color: #5c5c5c;
@@ -123,18 +133,20 @@ select option{
     padding: 10px;
     margin-left: 20px;
     margin-top: 10px;
-    text-align: left;
-    padding-left: 20px;
 }
 
-.cartao-info-complementar{
-    display: flex;
-    background-color: white;
-    border-radius: 20px;
-    padding: 50px;
+#divMsgFaturamento{
+    font-weight: bold;
+    text-align: center;
     margin-top: 30px;
-    width: 1000px;
-    justify-self: center;
+    font-size: 32px;
+}
+
+#divMsgPercaDinheiro, #divMsgLucroSemProduto, #divMsgToneladaSemProduto, #divMsgGarrafaComProduto{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 16px;
+
 }
 
 @media (max-width: 720px) {
